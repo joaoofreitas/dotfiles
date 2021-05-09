@@ -73,9 +73,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_r, 	   zoom,           {0} },
 	{ MODKEY,	                XK_q,      killclient,     {0} },
-	{ MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,             XK_n,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_i,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY|ShiftMask,             XK_o,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -95,7 +95,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	//More custom
-	{ MODKEY,                       XK_Tab,    spawn,          SHCMD("rofi -modi drun,run -show drun -font 'Iosevka Regular  10' -show-icons") },
+	{ MODKEY,                       XK_Tab,    spawn,          SHCMD("rofi -modi drun,run -show drun -font 'Iosevka Regular  11' -show-icons") },
 	{ MODKEY,                       XK_w,      spawn,	   SHCMD("brave")},
 	{ MODKEY,                       XK_f,      spawn,	   SHCMD("pcmanfm")},
 };
