@@ -98,6 +98,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    spawn,          SHCMD("rofi -modi drun,run -show drun -font 'Iosevka Regular  11' -show-icons") },
 	{ MODKEY,                       XK_w,      spawn,	   SHCMD("brave")},
 	{ MODKEY,                       XK_f,      spawn,	   SHCMD("pcmanfm")},
+	{ MODKEY,                       XK_x,      spawn,	   SHCMD("rofi -show p -modi p:rofi-power-menu   -theme gruvbox-dark  -font 'Iosevka 11'   -width 20   -lines 6")},
 };
 
 /* button definitions */
