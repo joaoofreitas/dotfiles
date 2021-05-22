@@ -16,7 +16,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#928374";
+static const char col_cyan[]        = "#1D1F0C";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -104,6 +104,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      spawn,	   SHCMD("pcmanfm")},
 	{ MODKEY,                       XK_x,      spawn,	   SHCMD("rofi -show p -modi p:rofi-power-menu   -theme gruvbox-dark  -font 'Iosevka 11'   -width 20   -lines 6")},
 
+	{ MODKEY,                       XK_p,      spawn,	   SHCMD("flameshot gui")},
 	// Vanity Gaps
 	
 	{ MODKEY|ShiftMask,              XK_h,      incrgaps,       {.i = +1 } },
