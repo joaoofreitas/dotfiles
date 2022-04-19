@@ -1,0 +1,4 @@
+child exited with status 1
+Command exited with non-zero status 1
+0.03user 0.01system 0:00.06elapsed 70%CPU (0avgtext+0avgdata 12456maxresident)k
+0inputs+8outputs (0major+1215minor)pagefaults 0swaps
