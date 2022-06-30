@@ -14,13 +14,13 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
-static const char *fonts[]          = { "Iosevka:size=10" };
-static const char dmenufont[]       = "Iosevka:size=10";
+static const char *fonts[]          = { "EffectsEighty:size=12" };
+static const char dmenufont[]       = "Iosevka:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#1D1F0C";
+static const char col_cyan[]        = "#3c3836";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -41,7 +41,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
@@ -67,7 +67,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "konsole", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -105,11 +105,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	//More custom
 	{ MODKEY,                       XK_Tab,    spawn,          SHCMD("rofi -modi drun,run -show drun -font 'Iosevka Regular  11' -show-icons") },
-	{ MODKEY,                       XK_w,      spawn,	   SHCMD("brave")},
+	{ MODKEY,                       XK_w,      spawn,	   SHCMD("brave-browser")},
 	{ MODKEY,                       XK_f,      spawn,	   SHCMD("pcmanfm")},
 	{ MODKEY,                       XK_x,      spawn,	   SHCMD("rofi -show p -modi p:rofi-power-menu   -theme gruvbox-dark  -font 'Iosevka 11'   -width 20   -lines 6")},
 
-	{ MODKEY,                       XK_p,      spawn,	   SHCMD("flameshot gui")},
+	{ MODKEY,                       XK_p,      spawn,	   SHCMD("spectacle")},
 	// Vanity Gaps
 	
 	{ MODKEY|ShiftMask,              XK_h,      incrgaps,       {.i = +1 } },
@@ -128,7 +128,7 @@ static Key keys[] = {
 	//{ MODKEY|ControlMask,           XK_y,      incrivgaps,     {.i = +1 } },
 	//{ MODKEY|ControlMask,           XK_o,      incrivgaps,     {.i = -1 } },
 	//{ MODKEY|Mod4Mask,              XK_y,      incrohgaps,     {.i = +1 } },
-	//{ MODKEY|Mod4Mask,              XK_o,      incrohgaps,     {.i = -1 } },
+	//{ MODKEY|Mod4Mask,              XK_o,      incrohgaps,     {.i = -1 } e,
 	//{ MODKEY|ShiftMask,             XK_y,      incrovgaps,     {.i = +1 } },
 	//{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
 };
