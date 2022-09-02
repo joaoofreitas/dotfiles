@@ -1,5 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
+#define XF86MonBrightnessDown 0x1008ff03
+#define XF86MonBrightnessUp 0x1008ff02
+
 #include "tcl.c"
 
 /* appearance */
@@ -69,9 +72,14 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char *xi[] = {"xbacklight", "-inc", "7", NULL};
+static const char *xd[] = {"xbacklight", "-dec", "7", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+        {0, XF86MonBrightnessDown, spawn, {.v = xd}},
+	{0, XF86MonBrightnessUp, spawn, {.v = xi}},
+
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -104,12 +112,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	//More custom
 	{ MODKEY,                       XK_Tab,    spawn,          SHCMD("rofi -modi drun,run -show drun -font 'EffectsEighty  20' -show-icons") },
 	{ MODKEY,                       XK_w,      spawn,	   SHCMD("brave")},
 	{ MODKEY,                       XK_f,      spawn,	   SHCMD("pcmanfm")},
 	{ MODKEY,                       XK_x,      spawn,	   SHCMD("rofi -show p -modi p:rofi-power-menu   -theme gruvbox-dark  -font 'EffectsEighty 20'   -width 30")},
-
 	{ MODKEY,                       XK_p,      spawn,	   SHCMD("spectacle")},
 	// Vanity Gaps
 	
