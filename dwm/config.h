@@ -15,8 +15,8 @@ static const int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
 static const int user_bh            = 10;        /* 2 is the default spacing around the bar's font */
-static const char *fonts[]          = { "EffectsEighty:size=14" };
-static const char dmenufont[]       = "Iosevka:size=12";
+static const char *fonts[]          = { "EffectsEighty:size=20" };
+static const char dmenufont[]       = "Iosevka:size=14";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -68,7 +68,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "konsole", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -105,10 +105,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	//More custom
-	{ MODKEY,                       XK_Tab,    spawn,          SHCMD("rofi -modi drun,run -show drun -font 'EffectsEighty  14' -show-icons") },
-	{ MODKEY,                       XK_w,      spawn,	   SHCMD("brave-browser")},
+	{ MODKEY,                       XK_Tab,    spawn,          SHCMD("rofi -modi drun,run -show drun -font 'EffectsEighty  20' -show-icons") },
+	{ MODKEY,                       XK_w,      spawn,	   SHCMD("brave")},
 	{ MODKEY,                       XK_f,      spawn,	   SHCMD("pcmanfm")},
-	{ MODKEY,                       XK_x,      spawn,	   SHCMD("rofi -show p -modi p:rofi-power-menu   -theme gruvbox-dark  -font 'EffectsEighty 14'   -width 20")},
+	{ MODKEY,                       XK_x,      spawn,	   SHCMD("rofi -show p -modi p:rofi-power-menu   -theme gruvbox-dark  -font 'EffectsEighty 20'   -width 30")},
 
 	{ MODKEY,                       XK_p,      spawn,	   SHCMD("spectacle")},
 	// Vanity Gaps
